@@ -1,0 +1,7 @@
+{% extends "base.html" %}
+
+{% block body %}
+            yo
+            <input class="textbox" type="hidden" name="sessionId" id="sessionId" value={{ sessionId }}><br>
+            <input value="Try again" type="button" onclick="window.location = '/';">
+{% endblock %}

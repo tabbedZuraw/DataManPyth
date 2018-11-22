@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>Words found</h1>
+            <table style="width:100%">
+                <tr>
+                <th>Word</th>
+                <th>Score</th>
+                </tr>
+             {% for key, value in aAn %}
+                <TR>
+                <TD class="c">{{key}}</TD>
+                <TD class="c1">{{value[0]}}</TD>
+            </TR>
+            {% endfor %}
+            </table>
+             <input value="Return" type="button" onclick="window.location = '/';">
+{% endblock %}

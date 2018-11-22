@@ -1,0 +1,43 @@
+{% extends "base.html" %}
+
+{% block body %}
+<h1>Words found</h1>
+            <table style="width:100%">
+                <tr>
+                <th>Word</th>
+                <th>Frequency</th>
+                <th>Association 1</th>
+                <th>Frequency 1</th>  
+                <th>Association 2</th> 
+                <th>Frequency 2</th> 
+                <th>Association 3</th> 
+                <th>Frequency 3</th> 
+                </tr>
+            {% for key, value in foundD %}
+                <TR>
+                <TD class="c">{{key}}</TD>
+                <TD class="c1">{{value[0]}}</TD>
+                <TD class="c1">{{value[1].keys()}}</TD>
+                <TD class="c1">{{value[1].values()}}</TD>
+                <TD class="c1">{{value[2].keys()}}</TD>
+                <TD class="c1">{{value[2].values()}}</TD>
+                <TD class="c1">{{value[3].keys()}}</TD>
+                <TD class="c1">{{value[3].values()}}</TD>
+            </TR>
+            {% endfor %}
+            </table>
+<h1>Words not found </h1>
+            <table style="width:100%">
+                <tr>
+                <th>Word</th>
+                <th>Frequency</th>
+                </tr>
+             {% for key, value in notFoundD %}
+                <TR>
+                <TD class="c">{{key}}</TD>
+                <TD class="c1">{{value[0]}}</TD>
+            </TR>
+            {% endfor %}
+            </table>
+             <input value="Return" type="button" onclick="window.location = '/';">
+{% endblock %}
